@@ -1,5 +1,8 @@
 # zsh-scripts
 
+- bu
+   - Backup personal repositories.
+
 ## Add to path
 
 ```
