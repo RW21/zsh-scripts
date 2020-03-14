@@ -1,19 +1,22 @@
 #!/bin/zsh
 git add .
-git status
-echo "Confirm commit and push? y/n"
-read confirm
-if  [ "$confirm" = "Y" ] || [ "$confirm" = "y" ]
+if [ -n "$(git status --porcelain)" ]
 then
-    if [ -z "$1" ]
+    git status
+    echo "Confirm commit and push? y/n"
+    read confirm
+    if  [ "$confirm" = "Y" ] || [ "$confirm" = "y" ]
     then
-        git commit -m "Update" || echo "Commit failed"
+        if [ -z "$1" ]
+        then
+            git commit -m "Update" || echo "Commit failed"
+        else
+            git commit -m "$1" || echo "Commit failed"
+        fi
+        git push origin head || echo "Push failed"
     else
-        git commit -m "$1" || echo "Commit failed"
+        git reset
+        echo "Git reset"
     fi
-    git push origin head || echo "Push failed"
-else
-    git reset
-    echo "Git reset"
 fi
 
