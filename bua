@@ -1,12 +1,10 @@
 #!/bin/zsh
 
-IFS=$'\n'       # make newlines the only separator
-set -f          # disable globbing
+IFS=$'\n'
+set -f
 for i in $(cat working_directories); do
     echo "$i"
     cd $i
-
     git pull
-
     bu
 done
