@@ -7,9 +7,9 @@ if  [ "$confirm" = "Y" ] || [ "$confirm" = "y" ]
 then
     if [ -z "$1" ]
     then
-    git commit -m "$1" || echo "Commit failed"
+        git commit -m "Update" || echo "Commit failed"
     else
-    git commit -m "Update" || echo "Commit failed"
+        git commit -m "$1" || echo "Commit failed"
     fi
     git push origin head || echo "Push failed"
 else
