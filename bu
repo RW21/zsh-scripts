@@ -18,5 +18,7 @@ then
         git reset
         echo "Git reset"
     fi
+else
+echo "No local changes"
 fi
 
