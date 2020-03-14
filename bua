@@ -6,6 +6,6 @@ set -f
 for i in $(cat working_directories); do
     echo "$i"
     cd $i
-    : $(git pull &)
+    git pull &
     bu
 done
