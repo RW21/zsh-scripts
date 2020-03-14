@@ -1,7 +1,9 @@
 # zsh-scripts
 
 - bu
-   - Backup personal repositories.
+  - Backup personal repositories.
+- bua
+  - Backup all working directories listed in `working_directories`.
 
 ## Add to path
 
