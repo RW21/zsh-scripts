@@ -5,12 +5,8 @@ set -f          # disable globbing
 for i in $(cat working_directories); do
     echo "$i"
     cd $i
-    git remote update
 
-    if [ git status -uno ]
-    then
     git pull
-    fi
-    
+
     bu
 done
