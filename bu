@@ -5,7 +5,12 @@ echo "Confirm commit and push? y/n"
 read confirm
 if  [ "$confirm" = "Y" ] || [ "$confirm" = "y" ]
 then
+    if [ -z "$1" ]
+    then
+    git commit -m "$1" || echo "Commit failed"
+    else
     git commit -m "Update" || echo "Commit failed"
+    fi
     git push origin head || echo "Push failed"
 else
     git reset
