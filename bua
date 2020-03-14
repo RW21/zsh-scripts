@@ -2,9 +2,16 @@
 
 IFS=$'\n'
 set -f
+
+# for i in $(cat working_directories); do
+#     cd "$i"
+#     git pull &
+# done
+
 for i in $(cat working_directories); do
     echo "$i"
     cd $i
-    git pull
+    git pull &
+    # git pull
     bu
 done
