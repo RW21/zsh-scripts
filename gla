@@ -3,11 +3,6 @@
 IFS=$'\n'
 set -f
 
-gla
-
 for i in $(cat working_directories); do
-    echo "$i"
-    cd $i
-    # git pull &
-    bu
+    git pull &
 done
