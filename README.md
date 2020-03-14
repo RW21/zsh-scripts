@@ -1,5 +1,7 @@
 # zsh-scripts
 
+Used to sync personal code between several computers.
+
 - bu
   - Backup personal repositories.
 - bua
