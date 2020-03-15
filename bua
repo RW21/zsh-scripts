@@ -5,7 +5,7 @@ set -f
 
 gla
 
-for i in $(cat working_directories); do
+for i in $(cat `(dirname "$0")`/working_directories); do
     echo "$i"
     cd $i
     bu

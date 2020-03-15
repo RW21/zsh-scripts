@@ -3,6 +3,7 @@
 IFS=$'\n'
 set -f
 
-for i in $(cat working_directories); do
+for i in $(cat `(dirname "$0")`/working_directories); do
+    cd $i
     git pull &
 done
