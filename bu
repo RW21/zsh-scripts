@@ -9,11 +9,11 @@ then
     then
         if [ -z "$1" ]
         then
-            git commit -m "Update" || echo "Commit failed"
+		git commit -m "Update (bu)" || echo "Commit failed"
         else
             git commit -m "$1" || echo "Commit failed"
         fi
-        git push origin master &
+        git push origin master 
     else
         git reset
         echo "Git reset"
