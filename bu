@@ -14,7 +14,7 @@ then
         else
             git commit -m "$1" || echo "Commit failed"
         fi
-        branch = git symbolic-ref --short HEAD
+        branch=git symbolic-ref --short HEAD
         git push origin ${branch}
     else
         git reset
